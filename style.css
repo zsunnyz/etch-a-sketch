@@ -1,0 +1,21 @@
+#content-container{
+    display: flex;
+    justify-content: center;
+}
+
+#selectors {
+    flex-grow: 1;
+    width: 30vw;
+}
+
+#grid {
+    flex-grow: 1;
+    display: grid; 
+    
+    /*Using repeat to create a grid of 16 cells*/
+}
+
+div#grid > * {
+    width: auto; 
+    padding-top: 100%;
+}
