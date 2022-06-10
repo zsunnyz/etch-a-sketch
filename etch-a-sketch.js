@@ -1,4 +1,6 @@
-function initGridDiv(gridSize){
+let currColor ="#000000"; 
+
+function initSquareGrid(gridSize){
     gridContainer = document.getElementById('grid');     
     gridContainer.style.gridTemplateColumns= `repeat(${gridSize}, 1fr)`; 
     gridContainer.style.gridTemplateRows= `repeat(${gridSize}, 1fr)`; 
@@ -7,10 +9,19 @@ function initGridDiv(gridSize){
         for(let col = 0; col < gridSize; col++){
             newDiv = document.createElement("div");
             newDiv.classList.add(`C${col}`, `R${row}`);
+            newDiv.addEventListener("mouseover", onHover);
             gridContainer.appendChild(newDiv);
         }
     }
 }
-    
 
-initGridDiv(32);
+function onColorChange(value){
+    currColor = value;
+    console.log(currColor);
+}
+
+function onHover(event){
+    event.srcElement.style.backgroundColor = currColor;
+}
+
+initSquareGrid(16);
