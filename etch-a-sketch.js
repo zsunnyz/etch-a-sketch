@@ -1,7 +1,7 @@
 let currColor ="#000000"; 
 
 function initSquareGrid(gridSize){
-    gridContainer = document.getElementById('grid');     
+    let gridContainer = document.getElementById('grid');     
     gridContainer.style.gridTemplateColumns= `repeat(${gridSize}, 1fr)`; 
     gridContainer.style.gridTemplateRows= `repeat(${gridSize}, 1fr)`; 
     let newDiv;
@@ -18,6 +18,13 @@ function initSquareGrid(gridSize){
 function onColorChange(value){
     currColor = value;
     console.log(currColor);
+}
+
+function onColorReset(){
+    let divs = document.querySelectorAll("#grid > div");
+    divs.forEach(div => {
+        div.style.backgroundColor = "rgba(256, 256, 256, 0)";
+    });
 }
 
 function onHover(event){
