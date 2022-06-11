@@ -17,11 +17,11 @@
     <h1>Etch A Sketch!</h1>
     <div id="content-container">
         <div id="selectors">
-            <button id="reset" onclick="onColorReset()">Reset!</button>
-            <div id="color-container">
-                <label for="color-picker">Color Picker</label>
-                <input type="color" id="color-picker" value="#000000" onchange="onColorChange(this.value)">
+            <div id="color-container" onclick="document.getElementById('color-picker').click()">
+                <input type="color" id="color-picker" value="#000000" oninput="onColorChange(this.value)"> 
             </div>
+            <button id="rainbow" onclick="onRainbow()">RAINBOW</button>
+            <button id="reset" onclick="onColorReset()">RESET</button>
             <div id="size-container">
                 <label for="size-picker">Grid Size</label>
                 <input type="range" id="size-picker" min="1" max="100" value="16" class="slider" oninput="onSizeInput(this.value)"  onchange="initSquareGrid(this.value)">
@@ -29,7 +29,6 @@
             </div>
         </div>
         <div id="grid"></div>
-        <div id="padding"></div>
     </div>
 </body>
 </html>
