@@ -4,7 +4,9 @@ body {
     background-color: papayawhip;
     box-sizing: border-box;
 }
-
+h1 {
+    font-size: 36pt;
+}
 #content-container{
     display: flex;
     justify-content: center;
@@ -43,7 +45,8 @@ button:hover {
     margin: min(20vw, 40px);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     align-items: center;
 }
 
